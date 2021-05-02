@@ -143,7 +143,6 @@ export class ToolbarComponent extends React.Component {
             <IconButton
               edge="start"
               className={classes.menuButton}
-              color="transparent"
               aria-label="open drawer"
               onClick={this.props.openDrawerHandler}
             >
