@@ -1,4 +1,91 @@
-.heading {
-    padding: 10px;
-    margin: 10px;
+  
+.App {
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    margin-bottom:50px;
+    padding:50px;
+    align-content: center;
+  }
+  .noAccount {
+      padding:10px;
+      font-size: 0.9rem;
+      margin-bottom:0px;
+  }
+  .colContainer {
+      padding: 50px;
+      background-color: #fff;
+      box-shadow: 0px 0px 3px 1px rgb(211 211 211 / 70%);
+      width: 40%;
+      margin-bottom: 50px;
+      margin-right:2%;
+      float: left;
+  }
+  .colContainerIcon {
+      background-color: #fff;
+      width: 40%;
+      margin-bottom: 50px;
+      margin-left: 50px;
+      margin-right:2%;
+      float: left;
 }
+
+  label {
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+  }
+  
+  input + label {
+    font-weight: bold;
+    display: inline-flex;
+    margin-right: 20px;
+  }
+  
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='mobile'],
+  input[type='userName'],
+  input[type='firstName'],
+  input[type='lastName'],
+  textarea,
+  select {
+    display: block;
+    width: 400px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* margin-bottom: 20px; */
+  }
+  input[type='firstName'],
+  input[type='lastName'] {
+    width: 70%;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* margin-bottom: 20px; */
+  }
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: red;
+  }
+
+  .form-row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }

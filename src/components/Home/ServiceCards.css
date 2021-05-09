@@ -1,0 +1,62 @@
+
+.app-card-list {
+    background-color: darkgray;
+    display:inline-block;
+    width:100%;
+    float:right;
+    margin:0;
+    min-height: 75vh;
+    white-space:normal;
+    overflow-x: scroll;
+    margin-top:-70px;
+    
+    &::-webkit-scrollbar { 
+      display: none; 
+    }
+    
+    @media(min-width:768px) {
+        width:80%;
+        white-space:nowrap;
+        margin-top: 0;
+    }
+    
+    .card {
+      display: inline-block;
+    }
+  }
+
+  .service-cards{
+      max-width: 20rem;
+      margin: 20px 20px;
+  }
+
+  /* Float four columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 20px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {
+      margin: 0 -5px;
+    }
+.service-card-container {
+    height: 450px;
+    background-color: #454857;
+}
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }

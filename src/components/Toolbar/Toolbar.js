@@ -1,4 +1,5 @@
 import React from "react";
+import {withRouter} from 'react-router-dom';
 import { fade, withStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
@@ -10,6 +11,9 @@ const styles = theme => ({
     },
   grow: {
     flexGrow: 1
+  },
+  customiseToolbar: {
+    minHeight: 80
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -68,7 +72,6 @@ const styles = theme => ({
     }
   }
 });
-
 export class ToolbarComponent extends React.Component {
   state = {
     achorEl: false,
@@ -139,7 +142,7 @@ export class ToolbarComponent extends React.Component {
     return (
       <div className={classes.grow}>
         <AppBar position="static" color='transparent'>
-          <Toolbar>
+          <Toolbar  className={classes.customiseToolbar}>
             <IconButton
               edge="start"
               className={classes.menuButton}
@@ -149,7 +152,7 @@ export class ToolbarComponent extends React.Component {
                 <MenuIcon />
             </IconButton>
             <div className="logo">
-                <img className={classes.logo} src={'./Waqalat_Normal.png'} alt='company logo'/>
+                <img className={classes.logo} src={'./Waqalat_Normal.png'} alt='company logo' onClick={()=>this.props.history.push('./')} style={{'cursor': 'pointer'}}/>
             </div>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -165,7 +168,7 @@ export class ToolbarComponent extends React.Component {
               />
             </div>
             <div className={classes.grow} />
-            <Typography><Link href="#" color="inherit">Sign In</Link></Typography>
+            <Typography><Link href="#" color="inherit" onClick={()=>this.props.history.push('/signIn')}>Sign In</Link></Typography>
           </Toolbar>
         </AppBar>
         {renderMobileMenu}
@@ -175,4 +178,4 @@ export class ToolbarComponent extends React.Component {
   }
 }
 
-export default withStyles(styles)(ToolbarComponent);
+export default withRouter(withStyles(styles)(ToolbarComponent));

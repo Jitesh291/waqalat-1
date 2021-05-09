@@ -1,0 +1,13 @@
+.icon-container {
+    
+}
+
+.row {
+    margin-bottom:5px;
+    height:100px; 
+}
+.col {
+    float:left;
+    height:100%;
+    margin-right:1%;    
+}
