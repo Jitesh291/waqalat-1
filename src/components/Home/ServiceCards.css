@@ -1,5 +1,5 @@
 
-.app-card-list {
+/* .app-card-list {
     background-color: darkgray;
     display:inline-block;
     width:100%;
@@ -23,27 +23,36 @@
     .card {
       display: inline-block;
     }
-  }
+  } */
 
-  .service-cards{
-      max-width: 20rem;
-      margin: 20px 20px;
-  }
 
   /* Float four columns side by side */
 .column {
     float: left;
-    width: 25%;
-    padding: 0 20px;
+    width: 20%;
+    margin: 20px 30px;
   }
+
+.column:hover{
+  transform: scale(1.1);
+  box-shadow: 11px 11px 5px -5px rgba(255, 255, 255, 0.41);
+}
   
   /* Remove extra left and right margins, due to padding */
-  .row {
-      margin: 0 -5px;
-    }
+.row {
+    margin: 0 -5px;
+  }
 .service-card-container {
-    height: 450px;
+    padding: 20px;
+    height: 650px;
+    width:100%;
     background-color: #454857;
+}
+
+.service-cards-heading{
+  text-align: center;
+  margin: 60px;
+  color: azure;
 }
   /* Clear floats after the columns */
   .row:after {

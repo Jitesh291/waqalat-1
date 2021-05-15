@@ -6,12 +6,14 @@ import './ServiceCards.css';
 function ServiceCards() {
     return (
         <div className='service-card-container'>
+            <div className='service-cards-heading'><Typography variant='h3'>Legal Documents, Forms, and Contracts</Typography></div>
+            
         <div className='row'>
             {
             Object.keys(serviceHeadings)
             .map((key)=>{
                 console.log(key)
-                return <Card key={key} index={key} className='service-cards column'>
+                return <Card key={key} index={key} className='column'>
                     <CardContent>
                         <Typography variant='h6'>{key}</Typography>
                         <ul style={{'listStyleType': 'none'}}>
