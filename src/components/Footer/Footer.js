@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import './Footer.css';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 class Footer extends Component {
     render() {
         return (
             
             <div className='footer-container'>
                 <div className='footer-logos'>
-                    <img src='./Waqalat_White.png' className='company-logo'></img>
-                    <div className='social-media-logos'></div>
+                    <img src='./Waqalat_White.png' className='company-logo' alt='comapny logo'></img>
+                    <div className='social-media-logos'>
+                        <FacebookIcon className='sm-logo'/>
+                        <TwitterIcon className='sm-logo'/>
+                        <LinkedInIcon className='sm-logo'/>
+                    </div>
                 </div>
                 <div className='footer-nav-links'>
                     2

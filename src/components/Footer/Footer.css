@@ -23,3 +23,17 @@
 .footer-country-stickers{
     margin: 40px;
 }
+
+.company-logo {
+    width: 150px;
+}
+
+.social-media-logos {
+    display: flex;
+    padding: 10px;
+}
+
+.sm-logo {
+    color: var(--darkGrey);
+    margin: 5px;
+}
