@@ -1,21 +1,22 @@
 //import PropTypes from 'prop-types';
 import '../SignIn/SignIn.css';
-import { requestSignIn } from '../../actions/signIn';
+import { requestSignUp } from '../../actions/signUp';
+import { getSignUpPayload } from '../../utils/signUp';
 import { connect } from 'react-redux';
 
 import React from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from '../common/FormikControl'
-import { Button } from '@material-ui/core';
+import { Button, Link } from '@material-ui/core';
 import IconList from '../IconList/IconList';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 function SignUp (props) {
   const initialValues = {
-    firstName: '',
-    lastName:  '',
-    userName:  '',
+    first_name: '',
+    last_name:  '',
+    user_name:  '',
     mobile:    '',
     email:     '',
     password:  ''
@@ -46,7 +47,10 @@ function SignUp (props) {
   })
 
   const onSubmit = values => {
-    console.log('Form data', values)
+    console.log(values);
+    const payload = getSignUpPayload(values);
+    console.log(payload);
+    this.props.signUp(payload);
   }
 
   return (
@@ -67,14 +71,14 @@ function SignUp (props) {
                   // control='chakraInput'
                   type='firstName'
                   label='First Name'
-                  name='firstName'
+                  name='first_name'
                   />
                   <FormikControl
                   control='input'
                   // control='chakraInput'
                   type='lastName'
                   label='Last Name'
-                  name='lastName'
+                  name='last_name'
                   />
               </div>
               
@@ -83,7 +87,7 @@ function SignUp (props) {
                 // control='chakraInput'
                 type='userName'
                 label='User Name'
-                name='userName'
+                name='user_name'
                 />
                 <FormikControl
                 control='input'
@@ -106,7 +110,7 @@ function SignUp (props) {
                 name='password'
                 />
                 <Button variant="contained" type='submit' disabled={!formik.isValid}>Submit</Button>
-                <div className='noAccount'>Already have an account yet? <Link onClick={()=>props.history.push('./signIn')}>Click here to sign in.</Link></div>
+                <div className='noAccount'>Already have an account yet? <Link onClick={()=>props.history.push('./signUp')}>Click here to sign in.</Link></div>
             </Form>
             )
         }}
@@ -122,12 +126,12 @@ function SignUp (props) {
 
 const mapStateToProps = state => {
     return {
-        signIn: state.signIn
+        signUp: state.signUp
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        requestSignIn: (user) => dispatch(requestSignIn(user))
+        requestSignUp: (user) => dispatch(requestSignUp(user))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
