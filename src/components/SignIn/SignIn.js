@@ -9,6 +9,7 @@ import * as Yup from 'yup'
 import FormikControl from '../common/FormikControl'
 import { Button, Link } from '@material-ui/core';
 import IconList from '../IconList/IconList';
+import { getSignInPayload } from '../../utils/signIn';
 //import { Link } from 'react-router-dom';
 
 function SignIn (props) {
@@ -27,8 +28,10 @@ function SignIn (props) {
   })
 
   const onSubmit = values => {
-    console.log('Form data', values)
+    props.requestSignIn(getSignInPayload(values));
   }
+
+  const isLoading = props.signIn && props.signIn.status && props.signIn.status === 'REQUESTED' ? true : false;
 
   return (
     <React.Fragment>
@@ -54,8 +57,9 @@ function SignIn (props) {
                 label='Password'
                 name='password'
                 />
-                <Button type='submit' disabled={!formik.isValid}>Submit</Button>
-                <div className='noAccount'>Don't have an account yet? <Link onClick={()=>props.history.push('./signUp')}>Click here.</Link></div>
+                <Button variant="contained" type='submit' disabled={!formik.isValid || isLoading}>{isLoading ? 'Loading...' : 'Submit'}</Button>
+                {props.signIn && props.signIn.status === 'ERROR' ? <div className='error'>{props.signIn}</div> : null}
+                <div className='noAccount'>Don't have an account yet? <Link onClick={()=>props.history.push('./signIn')}>Click here.</Link></div>
             </Form>
             )
         }}

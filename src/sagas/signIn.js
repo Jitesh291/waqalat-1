@@ -1,18 +1,18 @@
 import { call, put } from "redux-saga/effects";
 import axios from "axios";
 
-import * as signupActions from "../actions/signUp";
+import * as signinActions from "../actions/signIn";
 
-export function* signup_process(action) {
+export function* signin_process(action) {
     try {
         const payload = yield call(
-            postSignupToAPI,
+            postSigninToAPI,
             action.user
         );
-        yield put(signupActions.signInSuccess(payload));
+        yield put(signinActions.signInSuccess(payload));
     } catch (e) {
         yield put(
-            signupActions.signInFailure({
+            signinActions.signInFailure({
                 "type": "error",
                 "text": "Network Error!"
             })
@@ -20,9 +20,10 @@ export function* signup_process(action) {
     }
 }
 
-const postSignupToAPI = data => {
+const postSigninToAPI = data => {
     let instance = axios.create({
         headers: { "Content-Type": "application/json" }
     });
-    return instance.post("https://cd8a68fef241.ngrok.io/user-management/users", data);
+    
+    return instance.post("https://cd8a68fef241.ngrok.io/auth/login", data);
 };

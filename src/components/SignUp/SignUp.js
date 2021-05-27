@@ -1,4 +1,4 @@
-//import PropTypes from 'prop-types';
+
 import '../SignIn/SignIn.css';
 import { requestSignUp } from '../../actions/signUp';
 import { getSignUpPayload } from '../../utils/signUp';
@@ -10,28 +10,27 @@ import * as Yup from 'yup'
 import FormikControl from '../common/FormikControl'
 import { Button, Link } from '@material-ui/core';
 import IconList from '../IconList/IconList';
-//import { Link } from 'react-router-dom';
 
 function SignUp (props) {
   const initialValues = {
-    first_name: '',
-    last_name:  '',
-    user_name:  '',
-    mobile:    '',
-    email:     '',
-    password:  ''
+    first_name: 'Ishita',
+    last_name:  'Roy',
+    user_name:  'ishiroy',
+    mobile:    '9790611464',
+    email:     'iroy@gmail.com',
+    password:  'ishita1234567'
   }
 
   const validationSchema = Yup.object({
-    firstName: Yup.string()
+    first_name: Yup.string()
               .min(2, "Too Short!")
               .max(50, "Too Long!")
               .required("Firstname is required"),
-    lastName: Yup.string()
+    last_name: Yup.string()
             .min(2, "Too Short!")
             .max(50, "Too Long!")
             .required("Lastname is required"),
-    userName: Yup.string().required('Required'),
+    user_name: Yup.string().required('Required'),
     mobile: Yup.string()
             .required("Phone number is required")
             .matches(
@@ -47,11 +46,10 @@ function SignUp (props) {
   })
 
   const onSubmit = values => {
-    console.log(values);
     const payload = getSignUpPayload(values);
-    console.log(payload);
-    this.props.signUp(payload);
+    props.requestSignUp(payload);
   }
+  const isLoading = props.signUp && props.signUp.status && props.signUp.status === 'REQUESTED' ? true : false;
 
   return (
     <React.Fragment>
@@ -60,7 +58,9 @@ function SignUp (props) {
         <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={onSubmit}
+        onSubmit={async (values) => {
+          onSubmit(values)
+        }}
         >
         {formik => {
             return (
@@ -109,7 +109,7 @@ function SignUp (props) {
                 label='Password'
                 name='password'
                 />
-                <Button variant="contained" type='submit' disabled={!formik.isValid}>Submit</Button>
+                <Button variant="contained" type='submit' disabled={!formik.isValid || isLoading}>{isLoading ? 'Loading...' : 'Submit'}</Button>
                 <div className='noAccount'>Already have an account yet? <Link onClick={()=>props.history.push('./signUp')}>Click here to sign in.</Link></div>
             </Form>
             )

@@ -2,7 +2,8 @@ import {signUp} from '../actions/constant';
 
 const signUpState = {
     user : null,
-    status: 'INITIAL'
+    status: 'INITIAL',
+    response: null
 }
 
 const signUpReducer = (state = signUpState, action)=> {
@@ -10,7 +11,7 @@ const signUpReducer = (state = signUpState, action)=> {
         case signUp.REQUEST:
             return {...state, status: 'REQUESTED', user: action.user};
         case signUp.SUCCESS:
-            return {...state, status: 'AVAILABLE', payload: action.payload};
+            return {...state, status: 'AVAILABLE', response: action.payload};
         case signUp.FAIL:
             return {...state, status: 'ERROR', errorStatus: action.payload};
         default:
