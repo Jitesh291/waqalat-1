@@ -2,6 +2,7 @@ import { call, put } from "redux-saga/effects";
 import axios from "axios";
 
 import * as signinActions from "../actions/signIn";
+import { SERVER_URL } from "../configuration/common";
 
 export function* signin_process(action) {
     try {
@@ -25,5 +26,5 @@ const postSigninToAPI = data => {
         headers: { "Content-Type": "application/json" }
     });
     
-    return instance.post("https://cd8a68fef241.ngrok.io/auth/login", data);
+    return instance.post(`${SERVER_URL}/auth/login`, data);
 };

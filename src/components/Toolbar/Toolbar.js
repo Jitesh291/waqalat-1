@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import { fade, withStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import { Typography, Link, AppBar, Toolbar, IconButton, InputBase, MenuItem, Menu } from "@material-ui/core";
+import UserDropdown from './UserDropdown/UserDropdown';
 
 const styles = theme => ({
     logo: {
@@ -107,7 +109,7 @@ export class ToolbarComponent extends React.Component {
     const { classes } = this.props;
     const isMenuOpen = Boolean(this.state.anchorEl);
     const isMobileMenuOpen = Boolean(this.state.mobileMoreAnchorEl);
-
+    const isLoggedIn = this.props.signIn.isSignedIn ? true : false;
     const menuId = "primary-search-account-menu";
     const renderMenu = (
       <Menu
@@ -168,7 +170,11 @@ export class ToolbarComponent extends React.Component {
               />
             </div>
             <div className={classes.grow} />
-            <Typography><Link href="#" color="inherit" onClick={()=>this.props.history.push('/signIn')}>Sign In</Link></Typography>
+            {!isLoggedIn ? 
+              <Typography><Link color="inherit" onClick={()=>this.props.history.push('/signIn')}>Sign In</Link></Typography> 
+              :
+              <UserDropdown user={this.props.signIn.user}/>
+            }
           </Toolbar>
         </AppBar>
         {renderMobileMenu}
@@ -177,5 +183,10 @@ export class ToolbarComponent extends React.Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+      signIn: state.signIn
+  }
+}
 
-export default withRouter(withStyles(styles)(ToolbarComponent));
+export default withRouter(connect(mapStateToProps)(withStyles(styles)(ToolbarComponent)));

@@ -1,5 +1,13 @@
 :root{
   --darkGrey: #454857;
+  --grey: #4d4d4d;
+  --lightGrey: rgb(179, 179, 179);
+  --white: #ffffff;
+  --yellow: #facf43;
+  --brown: #8b4b34;
+}
+* {
+  outline: 1px dotted black;
 }
 body {
   margin: 0;
@@ -8,6 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {

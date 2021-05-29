@@ -10,11 +10,11 @@ const signInState = {
 const signInReducer = (state = signInState, action)=> {
     switch(action.type) {
         case signIn.REQUEST:
-            return {...state, status: 'REQUESTED', user: action.user};
+            return {...state, status: 'REQUESTED', user: action.user.data};
         case signIn.SUCCESS:
-            return {...state, status: 'AVAILABLE', token: action.payload.token, isSignedIn: true};
+            return {...state, status: 'AVAILABLE', token: action.payload.data.token, isSignedIn: true};
         case signIn.FAIL:
-            return {...state, status: 'ERROR', errorStatus: action.payload};
+            return {...state, status: 'ERROR', errorStatus: action.type};
         default:
             return state;
     }

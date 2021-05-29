@@ -40,7 +40,9 @@ function SignIn (props) {
         <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={onSubmit}
+        onSubmit={async (values) => {
+          onSubmit(values)
+        }}
         >
         {formik => {
             return (
@@ -58,7 +60,7 @@ function SignIn (props) {
                 name='password'
                 />
                 <Button variant="contained" type='submit' disabled={!formik.isValid || isLoading}>{isLoading ? 'Loading...' : 'Submit'}</Button>
-                {props.signIn && props.signIn.status === 'ERROR' ? <div className='error'>{props.signIn}</div> : null}
+                {props.signIn && props.signIn.status === 'ERROR' ? <div className='error'>{"There was an error while logging you in "}</div> : null}
                 <div className='noAccount'>Don't have an account yet? <Link onClick={()=>props.history.push('./signIn')}>Click here.</Link></div>
             </Form>
             )

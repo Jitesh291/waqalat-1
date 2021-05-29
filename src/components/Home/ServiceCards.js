@@ -12,14 +12,13 @@ function ServiceCards() {
             {
             Object.keys(serviceHeadings)
             .map((key)=>{
-                console.log(key)
                 return <Card key={key} index={key} className='column'>
                     <CardContent>
                         <Typography variant='h6'>{key}</Typography>
                         <ul style={{'listStyleType': 'none'}}>
                             {
                             Object.keys(serviceHeadings[key]).map(i=>{
-                            return <li style={{'marginBottom': '10px'}}><Link>{serviceHeadings[key][i]}</Link></li>
+                            return <li style={{'marginBottom': '10px'}} key={i}><Link>{serviceHeadings[key][i]}</Link></li>
                             })
                             }
                         </ul>

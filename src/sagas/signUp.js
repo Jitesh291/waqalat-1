@@ -2,6 +2,7 @@ import { call, put } from "redux-saga/effects";
 import axios from "axios";
 
 import * as signupActions from "../actions/signUp";
+import { SERVER_URL } from "../configuration/common";
 
 export function* signup_process(action) {
     try {
@@ -24,5 +25,5 @@ const postSignupToAPI = data => {
     let instance = axios.create({
         headers: { "Content-Type": "application/json" }
     });
-    return instance.post("https://cd8a68fef241.ngrok.io/user-management/users", data);
+    return instance.post(`${SERVER_URL}/user-management/users`, data);
 };
