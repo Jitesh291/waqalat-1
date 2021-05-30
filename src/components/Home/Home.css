@@ -67,7 +67,7 @@ li:focus-within {
 
 .category-list li:hover .dropdown{
     transition: all 0.3s ease;
-    top: 65px;
+    top: 60px;
     opacity:1;
     visibility: visible;
 }
@@ -118,25 +118,16 @@ li:focus-within {
     background-color: var(--darkYellow); 
     color: var(--white);
 }
-/* .search-btn{
-    background-color: #facf43;
-    border: 1px solid#facf43;
-    border-radius: 5px 5px 5px 5px;
-    color: #FFFFFF;
-    display: block;
-    font-size: 22px;
-    overflow: visible;
-    padding: 0 8px;
-    text-align: center;
-    margin-left: 10px;
-    vertical-align: middle;
-    height: 30px;
-    color:'#facf43'
-} */
-  .hero-image-container{
-      padding: 20px;
-      margin:20px;
-      height:500px;
+.customer-rating{
+    width:50%;
+    margin-top:20px;
+    z-index: 2;
+    position: absolute;
+}
+
+  .container{
+    padding: 20px;
+    height:500px;
   }
 
   .hero-image{
@@ -146,12 +137,6 @@ li:focus-within {
     position: absolute;
   }
 
-  .customer-rating{
-      width:50%;
-      margin-top: 70px;
-      padding: 20px;
-      z-index: 2;
-      position: absolute;
-  }
+
 
 

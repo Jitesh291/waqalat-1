@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Typography, TextField, Button } from '@material-ui/core';
+import { Typography, TextField } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 import './Home.css'
 import ServiceCards from './ServiceCards';
@@ -50,14 +50,12 @@ export default class Home extends Component {
                     </ul>
                 </div>
                 </nav>
-                <div className='hero-image-container'>
+                <div className='container'>
                     <Typography variant='h3'>Free Legal Documents</Typography>
                     <Typography variant='h5' style={{'color': '#8B4B34'}}>Print or download your customized legal document in 5-10 minutes.</Typography>
                     <div className='search-bar'>
-                        
                             <TextField variant="outlined" className='search-field' type='search' size='small'/>  
-                        
-                        <button className='search-btn'>SEARCH</button>
+                            <button className='search-btn'>SEARCH</button>
                     </div>
                     <div className='customer-rating'>
                     <Typography>Our customers say Excellent 4.6 out of 5 stars</Typography>
