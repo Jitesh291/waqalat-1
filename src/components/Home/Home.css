@@ -82,25 +82,41 @@ li:focus-within {
 
 
 .search-bar {
-    position: absolute;
-    z-index: 4;
     width: 60%;
     margin-top: 20px;
     padding: 15px;
-    background: #E6E6E6;
-    display: inline-block;
+    background: var(--darkWhite);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
     height: 60px;
 }
 .search-box{
-    position: relative;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    color: var(--white);
+    
+}
+.search-field{
+    background-color: var(--white);
+    width: 80%;
+    float: left;
+    margin-right: 20px;
+}
+.search-btn{
+    width:10%;
+    background-color: var(--yellow); 
+    color: var(--white);
     height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    margin-left: 20px;
+}
+
+.search-btn:hover{
+    background-color: var(--darkYellow); 
+    color: var(--white);
 }
 /* .search-btn{
     background-color: #facf43;

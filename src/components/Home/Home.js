@@ -54,10 +54,10 @@ export default class Home extends Component {
                     <Typography variant='h3'>Free Legal Documents</Typography>
                     <Typography variant='h5' style={{'color': '#8B4B34'}}>Print or download your customized legal document in 5-10 minutes.</Typography>
                     <div className='search-bar'>
-                        <div className='search-box'>
-                            <TextField variant="outlined" style={{'height': '50px','float': 'left'}} />
-                            <Button style={{'backgroundColor':'#facf43', 'color': 'var(--white)', 'height': '30px', 'float': 'right', 'padding': '5px'}}>SEARCH</Button>
-                        </div>
+                        
+                            <TextField variant="outlined" className='search-field' type='search' size='small'/>  
+                        
+                        <button className='search-btn'>SEARCH</button>
                     </div>
                     <div className='customer-rating'>
                     <Typography>Our customers say Excellent 4.6 out of 5 stars</Typography>
