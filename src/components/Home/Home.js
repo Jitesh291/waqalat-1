@@ -9,27 +9,54 @@ export default class Home extends Component {
         return (
             <React.Fragment>
             <div className='page-1'>
+                <nav>
                 <div className='top-menu'>
                     <ul className='category-list'>
-                        <li className='category-list-item'>Real Estate</li>
+                        <li className='category-list-item'><div>Real Estate</div>
                             <ul className="dropdown">
-                                <li>Sub-1</li>
-                                <li>Sub-2</li>
-                                <li>Sub-3</li>
+                                <li className="dropdown-item">Sub-1</li>
+                                <li className="dropdown-item">Sub-2</li>
+                                <li className="dropdown-item">Sub-3</li>
                             </ul>
-                        <li className='category-list-item'>Business</li>
-                        <li className='category-list-item'>Financial</li>
-                        <li className='category-list-item'>Family</li>
-                        <li className='category-list-item'>All</li>
+                        </li>
+                        <li className='category-list-item'><div>Business</div>
+                            <ul className="dropdown">
+                                <li className="dropdown-item">Sub-1</li>
+                                <li className="dropdown-item">Sub-2</li>
+                                <li className="dropdown-item">Sub-3</li>
+                            </ul>
+                        </li>
+                        <li className='category-list-item'><div>Financial</div>
+                            <ul className="dropdown">
+                                <li className="dropdown-item">Sub-1</li>
+                                <li className="dropdown-item">Sub-2</li>
+                                <li className="dropdown-item">Sub-3</li>
+                            </ul>
+                        </li>
+                        <li className='category-list-item'><div>Family</div>
+                            <ul className="dropdown">
+                                <li className="dropdown-item">Sub-1</li>
+                                <li className="dropdown-item">Sub-2</li>
+                                <li className="dropdown-item">Sub-3</li>
+                            </ul>
+                        </li>
+                        <li className='category-list-item'><div>All</div>
+                            <ul className="dropdown">
+                                <li className="dropdown-item">Sub-1</li>
+                                <li className="dropdown-item">Sub-2</li>
+                                <li className="dropdown-item">Sub-3</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
+                </nav>
                 <div className='hero-image-container'>
                     <Typography variant='h3'>Free Legal Documents</Typography>
                     <Typography variant='h5' style={{'color': '#8B4B34'}}>Print or download your customized legal document in 5-10 minutes.</Typography>
                     <div className='search-bar'>
                         <div className='search-box'>
                             <TextField variant="outlined" style={{'height': '50px','float': 'left'}} />
-                            <Button style={{'backgroundColor':'#facf43', 'color': 'azure', 'height': '30px', 'float': 'right', 'padding': '5px'}}>SEARCH</Button>
+                            <Button style={{'backgroundColor':'#facf43', 'color': 'var(--white)', 'height': '30px', 'float': 'right', 'padding': '5px'}}>SEARCH</Button>
                         </div>
                     </div>
                     <div className='customer-rating'>
@@ -46,4 +73,3 @@ export default class Home extends Component {
         )
     }
 }
-// style={{'clear': 'right','padding': '20px', 'width': '500px', 'z-index': '2','position': 'absolute'}}
