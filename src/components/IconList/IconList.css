@@ -1,13 +1,15 @@
 .icon-container {
-    
+    padding: 0 20px;
 }
 
 .row {
     margin-bottom:5px;
-    height:100px; 
+ 
+    display: flex;
+    align-items: center;
 }
 .col {
-    float:left;
-    height:100%;
+    
+    
     margin-right:1%;    
 }
