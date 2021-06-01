@@ -61,7 +61,7 @@ function SignIn (props) {
                 />
                 <Button variant="contained" type='submit' disabled={!formik.isValid || isLoading}>{isLoading ? 'Loading...' : 'Submit'}</Button>
                 {props.signIn && props.signIn.status === 'ERROR' ? <div className='error'>{"There was an error while logging you in "}</div> : null}
-                <div className='noAccount'>Don't have an account yet? <Link onClick={()=>props.history.push('./signIn')}>Click here.</Link></div>
+                <div className='noAccount'>Don't have an account yet? <Link style={{cursor: 'pointer'}} onClick={()=>props.history.push('./signUp')}>Click here.</Link></div>
             </Form>
             )
         }}

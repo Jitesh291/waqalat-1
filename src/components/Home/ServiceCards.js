@@ -8,25 +8,25 @@ function ServiceCards() {
         <div className='service-card-container'>
             <div className='service-cards-heading'><Typography variant='h3'>Legal Documents, Forms, and Contracts</Typography></div>
             
-        <div className='row'>
-            {
-            Object.keys(serviceHeadings)
-            .map((key)=>{
-                return <Card key={key} index={key} className='column'>
-                    <CardContent>
-                        <Typography variant='h6'>{key}</Typography>
-                        <ul style={{'listStyleType': 'none'}}>
-                            {
-                            Object.keys(serviceHeadings[key]).map(i=>{
-                            return <li style={{'marginBottom': '10px'}} key={i}><Link>{serviceHeadings[key][i]}</Link></li>
-                            })
-                            }
-                        </ul>
-                    </CardContent>
-                </Card>
-            })
-            }
-        </div>
+            <div className='row'>
+                {
+                Object.keys(serviceHeadings)
+                .map((key)=>{
+                    return <Card key={key} index={key} className='column'>
+                        <CardContent>
+                            <Typography variant='h6'>{key}</Typography>
+                            <ul style={{listStyleType: 'none'}}>
+                                {
+                                Object.keys(serviceHeadings[key]).map(i=>{
+                                return <li style={{marginBottom: '10px'}} key={i}><Link style={{textDecoration: 'none', color: 'var(--darkGrey)'}}>{serviceHeadings[key][i]}</Link></li>
+                                })
+                                }
+                            </ul>
+                        </CardContent>
+                    </Card>
+                })
+                }
+            </div>
         </div>
     )
 }

@@ -8,9 +8,9 @@
   --darkYellow: #ebc33f;
   --brown: #8b4b34;
 }
-/* * {
+* {
   outline: 1px dotted black;
-} */
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -30,23 +30,19 @@
 .column {
     float: left;
     width: 20%;
-    margin: 20px 30px;
+    margin: 40px 20px;
+    
   }
 
-.column:hover{
-  transform: scale(1.1);
-  box-shadow: 11px 11px 5px -5px rgba(255, 255, 255, 0.41);
-}
-  
-  /* Remove extra left and right margins, due to padding */
 .row {
-    margin: 0 -5px;
+
+    height: 100%;
   }
 .service-card-container {
     padding: 20px;
-    height: 650px;
+    height: 750px;
     width:100%;
-    background-color: #454857;
+    background-color: var(--darkGrey);
 }
 
 .service-cards-heading{

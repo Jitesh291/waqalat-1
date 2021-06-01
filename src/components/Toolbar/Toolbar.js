@@ -171,7 +171,7 @@ export class ToolbarComponent extends React.Component {
             </div>
             <div className={classes.grow} />
             {!isLoggedIn ? 
-              <Typography><Link color="inherit" onClick={()=>this.props.history.push('/signIn')}>Sign In</Link></Typography> 
+              <Typography><Link style={{cursor: 'pointer'}} color="inherit" onClick={()=>this.props.history.push('/signIn')}>Sign In</Link></Typography> 
               :
               <UserDropdown user={this.props.signIn.user}/>
             }
