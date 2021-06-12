@@ -29,8 +29,8 @@
   /* Float four columns side by side */
 .column {
     float: left;
-    width: 20%;
-    margin: 40px 20px;
+    width: 30%;
+    margin: 20px 30px;
     
   }
 

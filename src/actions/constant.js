@@ -9,3 +9,9 @@ export const signUp = {
     SUCCESS: 'SIGN_UP_SUCCESS',
     FAIL: 'SIGN_UP_FAIL'
 }
+
+export const documents = {
+    REQUEST: 'DOCUMENT_FETCH_REQUEST',
+    SUCCESS: 'DOCUMENT_FETCH_SUCCESS',
+    FAIL: 'DOCUMENT_FETCH_FAIL'
+}
