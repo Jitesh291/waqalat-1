@@ -38,7 +38,7 @@ function Document(props) {
                 {
                     documents.length > 0 && documents.map((item, i) => {
                         return <Grid xs={12} sm={6} md={4}>
-                                    <OutlineCard documentName={item.name} id={item.id}/>
+                                    <OutlineCard documentName={item.name} id={item.id} {...props}/>
                                 </Grid>
                     })
 

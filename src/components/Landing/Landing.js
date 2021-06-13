@@ -6,6 +6,7 @@ import SignIn from './SignIn/SignIn';
 import SignUp from './SignUp/SignUp';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Documents from './Documents/Documents';
+import UserForm from './UserForm/UserForm';
 import './Landing.css';
 
 export default class Landing extends React.Component {
@@ -19,6 +20,9 @@ export default class Landing extends React.Component {
                 <Route path="/signIn" component={SignIn} />
                 <Route path="/signUp" component={SignUp} />
                 <Route path="/documents" component={Documents} />
+                <Route path="/documents/:id">
+                  <UserForm />
+                </Route>
                 {/* <Route component={NotFound} /> */}
           </Switch>
           <Footer />

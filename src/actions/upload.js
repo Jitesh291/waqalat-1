@@ -1,6 +1,6 @@
-import { signIn } from './constant';
+import { upload } from './constant';
 
-export function requestSignIn(user){ return { type: signIn.REQUEST, user }}
-export function signInSuccess(user){ return { type: signIn.SUCCESS, user }}
-export function signInFailure(){ return { type: signIn.FAIL }}
+export function uploadRequest(user){ return { type: upload.REQUEST, user }}
+export function uploadSuccess(user){ return { type: upload.SUCCESS, user }}
+export function uploadFailure(){ return { type: upload.FAIL }}
 
