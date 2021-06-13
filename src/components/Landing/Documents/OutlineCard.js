@@ -5,10 +5,13 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import PostAddIcon from '@material-ui/icons/PostAdd';
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 200
+        minWidth: 100,
+        marginRight: '10px',
+        marginBottom: 12
     },
     bullet: {
         display: "inline-block",
@@ -22,34 +25,38 @@ const useStyles = makeStyles({
         marginBottom: 12
     }
 });
-
-export default function OutlinedCard(props) {
-    const classes = useStyles();
+const getFields = () => {
     
+}
+function OutlineCard(props) {
+    const classes = useStyles();
     return (
+
         <Card className={classes.root} variant="outlined">
             <CardContent>
-                {/* <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography> */}
+                <Typography
+                    className={classes.title}
+                    color="textSecondary"
+                    gutterBottom
+                >
+                    Document title
+        </Typography>
                 <Typography variant="h5" component="h2">
                     {props.documentName}
         </Typography>
-                {/* <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography> */}
-                <Typography variant="body2" component="p">
-                    well meaning and kindly.
-          <br />
-                </Typography>
+
             </CardContent>
             <CardActions>
-                <Button size="small">Generate Document</Button>
+                <Button 
+                    variant="contained" 
+                    size="small"
+                    startIcon={<PostAddIcon />}
+                >
+                    Generate Document
+                </Button>
             </CardActions>
         </Card>
     );
 }
+
+export default OutlineCard;

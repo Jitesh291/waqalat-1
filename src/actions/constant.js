@@ -15,3 +15,15 @@ export const documents = {
     SUCCESS: 'DOCUMENT_FETCH_SUCCESS',
     FAIL: 'DOCUMENT_FETCH_FAIL'
 }
+
+export const fields = {
+    REQUEST: 'FIELDS_FETCH_REQUEST',
+    SUCCESS: 'FIELDS_FETCH_SUCCESS',
+    FAIL: 'FIELDS_FETCH_FAIL'
+}
+
+export const upload = {
+    REQUEST: 'UPLOAD_REQUEST',
+    SUCCESS: 'UPLOAD_SUCCESS',
+    FAIL: 'UPLOAD_FAIL'
+}
