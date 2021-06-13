@@ -6,9 +6,29 @@ import { SERVER_URL } from "../configuration/common";
 
 export function* documents_process() {
     try {
-        const payload = yield call(
-            getDocuments
-        );
+        // const payload = yield call(
+        //     getDocuments
+        // );
+        const payload = {
+            "data": [
+                {
+                    "id": 1,
+                    "name": 'Residential Rental Agreement'
+                },
+                {
+                    "id": 2,
+                    "name": 'Residential Rental Application'
+                },
+                {
+                    "id": 3,
+                    "name": 'Commercial Rental Agreement'
+                },
+                {
+                    "id": 4,
+                    "name": 'Residential Rental Agreement'
+                }
+            ]
+        }
         yield put(documentActions.documentsSuccess(payload));
     } catch (e) {
         yield put(

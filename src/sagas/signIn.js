@@ -6,10 +6,16 @@ import { SERVER_URL } from "../configuration/common";
 
 export function* signin_process(action) {
     try {
-        const payload = yield call(
-            postSigninToAPI,
-            action.user
-        );
+        // const payload = yield call(
+        //     postSigninToAPI,
+        //     action.user
+        // );
+        const payload = {
+            'data': {
+                "auth_token": 'abcdefgh',
+                id: 5
+            }
+        }
         yield put(signinActions.signInSuccess(payload));
     } catch (e) {
         yield put(
