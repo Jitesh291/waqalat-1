@@ -1,5 +1,5 @@
-import ToolbarComponent from "../Toolbar/Toolbar";
-import HamburgerComponent from "../Hamburger/Hamburger";
+import ToolbarComponent from "./Toolbar/Toolbar";
+import HamburgerComponent from "./Hamburger/Hamburger";
 
 import React from 'react'
 

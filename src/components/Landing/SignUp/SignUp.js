@@ -1,5 +1,5 @@
 
-import '../SignIn/SignIn.css';
+import '../Landing/SignIn/SignIn.css';
 import { requestSignUp } from '../../actions/signUp';
 import { getSignUpPayload } from '../../utils/signUp';
 import { connect } from 'react-redux';

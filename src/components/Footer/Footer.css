@@ -1,20 +1,23 @@
 .footer-container {
-    display:flex;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: var(--lightGrey);
     text-align: center;
     color: var(--grey);
-    padding:20px;
+}
+
+.footer-content{
+    display: flex;
 }
 
 .footer-tc{
     background-color: var(--darkWhite);
-    padding: 40px 80px;
+    padding: 40px;
     color: var(--darkGrey);
     font-size:0.75rem;
     text-align: center;
+    width: 100%;
 }
 
 .footer-logos {

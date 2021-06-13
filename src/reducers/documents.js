@@ -2,15 +2,15 @@ import {documents} from '../actions/constant';
 
 const initialState = {
     documents: [],
-    componentState: 'INITIAL'
+    status: 'INITIAL'
 }
 
 const documentReducer = (state = initialState, action) => {
     switch (action.type) {
         case documents.SUCCESS:
-            return { ...state, documents: action.payload.data, componentState: 'AVAILABLE' };
+            return { ...state, documents: action.payload.data, status: 'AVAILABLE' };
         case documents.FAIL:
-            return { ...state, componentState: 'ERROR' };
+            return { ...state, status: 'ERROR' };
         default:
             return state;
     }

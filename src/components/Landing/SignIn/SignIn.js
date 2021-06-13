@@ -1,18 +1,21 @@
 //import PropTypes from 'prop-types';
 import './SignIn.css';
-import { requestSignIn } from '../../actions/signIn';
+import { requestSignIn } from '../../../actions/signIn';
 import { connect } from 'react-redux';
 
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
-import FormikControl from '../common/FormikControl'
+import FormikControl from '../../common/FormikControl'
 import { Button, Link } from '@material-ui/core';
-import IconList from '../IconList/IconList';
-import { getSignInPayload } from '../../utils/signIn';
+import IconList from '../../IconList/IconList';
+import { getSignInPayload } from '../../../utils/signIn';
 //import { Link } from 'react-router-dom';
 
 function SignIn (props) {
+  useEffect(()=>{
+    if(props.signIn.status === 'AVAILABLE') props.history.push('/documents');
+  })
   const initialValues = {
     email: '',
     password: ''

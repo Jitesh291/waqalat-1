@@ -8,7 +8,8 @@ class Footer extends Component {
     render() {
         return (
             <React.Fragment>
-            <div className='footer-container'>
+            <footer className='footer-container'>
+                <div className='footer-content'>
                 <div className='footer-logos'>
                     <img src='./Waqalat_White.png' className='company-logo' alt='comapny logo'></img>
                     <div className='social-media-logos'>
@@ -29,10 +30,12 @@ class Footer extends Component {
                 <div className='footer-country-stickers'>
                     
                 </div>
-            </div>
-            <div className='footer-tc'>
+                </div>
+                <div className='footer-tc'>
                 Your use of this site is subject to our Terms of Use, Disclaimer, Privacy Policy. LawDepot® is not a law firm and cannot provide legal advice. We provide information and software and you are responsible for appropriately using this material. ©2002-2021 LawDepot® (Sequiter Inc.). All Rights Reserved.
-            </div>
+                </div>
+            </footer>
+            
             </React.Fragment>
         );
     }
