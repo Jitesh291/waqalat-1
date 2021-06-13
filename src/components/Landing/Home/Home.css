@@ -1,5 +1,5 @@
 .page-1{
-    height: 100%;
+    height: 100vh;
     display: block;
 }
 .page-2{
@@ -82,7 +82,6 @@ li:focus-within {
 
 
 .search-bar {
-    width: 60%;
     margin-top: 20px;
     padding: 15px;
     background: var(--darkWhite);
@@ -98,12 +97,11 @@ li:focus-within {
 }
 .search-field{
     background-color: var(--white);
-    width: 80%;
     float: left;
     margin-right: 20px;
+    width: 500px;
 }
 .search-btn{
-    width:10%;
     background-color: var(--yellow); 
     color: var(--white);
     height: 40px;
@@ -130,11 +128,16 @@ li:focus-within {
     height:500px;
   }
 
+  .search-container{
+      display:flex;
+      justify-content: space-between;
+  }
+
   .hero-image{
-    right:50px;
+    /* right:50px; */
     width: 500px;
-    z-index: 3;
-    position: absolute;
+    /* z-index: 3;
+    position: absolute; */
   }
 
 

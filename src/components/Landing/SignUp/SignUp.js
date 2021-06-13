@@ -1,15 +1,15 @@
 
-import '../Landing/SignIn/SignIn.css';
-import { requestSignUp } from '../../actions/signUp';
-import { getSignUpPayload } from '../../utils/signUp';
+import '../SignIn/SignIn.css';
+import { requestSignUp } from '../../../actions/signUp';
+import { getSignUpPayload } from '../../../utils/signUp';
 import { connect } from 'react-redux';
 
 import React from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
-import FormikControl from '../common/FormikControl'
+import FormikControl from '../../common/FormikControl'
 import { Button, Link } from '@material-ui/core';
-import IconList from '../IconList/IconList';
+import IconList from '../../IconList/IconList';
 
 function SignUp (props) {
   const initialValues = {

@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Home from '../Home/Home';
+import Home from './Home/Home';
 import SignIn from './SignIn/SignIn';
-import SignUp from '../SignUp/SignUp';
+import SignUp from './SignUp/SignUp';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Documents from './Documents/Documents';
 import './Landing.css';
@@ -11,7 +11,7 @@ import './Landing.css';
 export default class Landing extends React.Component {
   render() {
     return (
-    <div className='landing-container'>
+    <div>
          <BrowserRouter>
           <Header />
           <Switch>

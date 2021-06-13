@@ -1,5 +1,5 @@
 import React from 'react'
-import { serviceHeadings } from '../../configuration/homepage/services';
+import { serviceHeadings } from '../../../configuration/homepage/services';
 import { Card, CardContent, Typography, Link } from '@material-ui/core';
 import './ServiceCards.css';
 
