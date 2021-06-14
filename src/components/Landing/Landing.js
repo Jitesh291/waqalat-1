@@ -20,10 +20,7 @@ export default class Landing extends React.Component {
                 <Route path="/signIn" component={SignIn} />
                 <Route path="/signUp" component={SignUp} />
                 <Route path="/documents" component={Documents} />
-                {/* <Route path="/documents/:id">
-                  <UserForm />
-                </Route> */}
-                <Route path="/documents/:id" render={(props) => <UserForm {...props} />} />
+                <Route path="/fields/:id" render={(props) => <UserForm {...props} />} />
                 {/* <Route component={NotFound} /> */}
           </Switch>
           <Footer />

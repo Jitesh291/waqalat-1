@@ -30,16 +30,16 @@ const useStyles = makeStyles({
 
 function OutlineCard(props) {
     const classes = useStyles();
-    const [id, setId] = useState(null);
-    useEffect(()=>{
-        //if(props.field && props.field.status === 'AVAILABLE' && props.field.fieldsFetched && props.field.fieldsFetched.length > 0 && id) props.history.push(`./documents/${id}`)
-    })
-    const getFields = useCallback((id) => {
-        // setId(id);
-        // props.fetchFields(id);
-        props.history.push(`./documents/${id}`);
+    //const [id, setId] = useState(null);
+    // useEffect(()=>{
+    //     //if(props.field && props.field.status === 'AVAILABLE' && props.field.fieldsFetched && props.field.fieldsFetched.length > 0 && id) props.history.push(`./documents/${id}`)
+    // })
+    // const getFields = useCallback((id) => {
+    //     // setId(id);
+    //     // props.fetchFields(id);
+    //     props.history.push(`/documents/${id}`);
         
-    }, [id])
+    // }, [id])
     return (
 
         <Card className={classes.root} variant="outlined">
@@ -61,7 +61,7 @@ function OutlineCard(props) {
                     variant="contained" 
                     size="small"
                     startIcon={<PostAddIcon />}
-                    onClick={() => getFields(props.id)}
+                    onClick={() => props.getFields(props.id)}
                 >
                     Generate Document
                 </Button>

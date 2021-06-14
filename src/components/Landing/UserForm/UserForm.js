@@ -5,7 +5,7 @@ import { fetchFields } from '../../../actions/fields';
 
 function UserForm(props) {
     useEffect(()=>{
-        if(props.field.status === 'INITIAL') props.fetchFields(props.id);
+        if(props.field.status === 'INITIAL') props.fetchFields(props.match.params.id);
     })
 
     const { id } = props.match.params;

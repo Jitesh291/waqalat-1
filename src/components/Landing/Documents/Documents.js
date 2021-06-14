@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {Grid,Card, CardContent} from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import { fetchDocuments } from '../../../actions/documents';
 import OutlineCard from './OutlineCard';
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router';
 
 const useStyles = makeStyles({
     gridContainer: {
@@ -19,11 +20,17 @@ const useStyles = makeStyles({
 
 function Document(props) {
     const [documents, setDocuments] = useState([]);
+    const [id, setId] = useState(null);
     useEffect(() => {
         if (props.documents.status === 'INITIAL') props.fetchDocuments()
         if (props.documents.status === 'AVAILABLE') setDocuments(props.documents.documents)
     })
-
+    const getFields = useCallback((id) => {
+        setId(id);
+        // props.fetchFields(id);
+        props.history.push(`fields/${id}`);
+        
+    }, [id])
     const classes = useStyles();
     console.log(documents)
     return (
@@ -38,7 +45,7 @@ function Document(props) {
                 {
                     documents.length > 0 && documents.map((item, i) => {
                         return <Grid xs={12} sm={6} md={4}>
-                                    <OutlineCard documentName={item.name} id={item.id} {...props}/>
+                                    <OutlineCard documentName={item.name} id={item.id} getFields={getFields} {...props}/>
                                 </Grid>
                     })
 
@@ -60,4 +67,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Document);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Document));
