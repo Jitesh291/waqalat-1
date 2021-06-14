@@ -8,7 +8,7 @@ function UserForm(props) {
         if(props.field.status === 'INITIAL') props.fetchFields(props.id);
     })
 
-    const { id } = useParams();
+    const { id } = props.match.params;
     console.log(id);
     return (
         <div>
