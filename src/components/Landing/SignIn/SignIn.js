@@ -27,7 +27,7 @@ function SignIn (props) {
       .required('Required'),
     password: Yup.string()
     .required("Password is required")
-    .min(6, "Password is too short - should be 6 chars minimum")
+    .min(4, "Password is too short - should be 4 chars minimum")
   })
 
   const onSubmit = values => {

@@ -8,7 +8,7 @@ export function* upload_process(action) {
     try {
         const payload = yield call(
             postuploadToAPI,
-            action.user
+            action.fields
         );
         yield put(uploadActions.uploadSuccess(payload));
     } catch (e) {
@@ -25,5 +25,5 @@ const postuploadToAPI = data => {
     let instance = axios.create({
         headers: { "Content-Type": "application/json" }
     });
-    return instance.post(`${SERVER_URL}/user-management/users`, data);
+    return instance.post(`${SERVER_URL}/build-document`, data);
 };

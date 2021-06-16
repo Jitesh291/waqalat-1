@@ -7,8 +7,10 @@ const initialState = {
 
 const fieldReducer = (state = initialState, action) => {
     switch (action.type) {
+        case fields.REQUEST:
+            return {...state, status: 'REQUESTED', id: action.id};
         case fields.SUCCESS:
-            return { ...state, fieldsFetched: action.payload.fields, status: 'AVAILABLE' };
+            return { ...state, fieldsFetched: action.payload.data.fields, status: 'AVAILABLE' };
         case fields.FAIL:
             return { ...state, status: 'ERROR' };
         default:

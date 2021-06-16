@@ -49,6 +49,10 @@
   input[type='userName'],
   input[type='firstName'],
   input[type='lastName'],
+  input[type='lastName'],
+  input[type='name'],
+  input[type='age'],
+  input[type='gender'],
   textarea,
   select {
     display: block;
