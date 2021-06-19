@@ -73,6 +73,35 @@ export default class Home extends Component {
             </div>
             <div className='page-2'>
                 <ServiceCards />
+                <div className='step-container'>
+                    <div className='how'>
+                        <Typography variant='h5'>How it works:</Typography>
+                    </div>
+                    
+                    <div className='step'>
+                        <span className='step-number'>1</span>
+                        <div className='step-content'>
+                            <Typography variant='h6' className='step-heading'>Choose Your Legal Form</Typography>
+                            <Typography>Browse from our free online legal contracts & documents</Typography>
+                        </div>
+                    </div>
+
+                    <div className='step'>
+                        <span className='step-number'>2</span>
+                        <div className='step-content'>
+                            <Typography variant='h6' className='step-heading'>Fill Some Details</Typography>
+                            <Typography>Our contract creator will turn your answers into a customized legal form</Typography>
+                        </div>
+                    </div>
+
+                    <div className='step'>
+                        <span className='step-number'>3</span>
+                        <div className='step-content'>
+                            <Typography variant='h6' className='step-heading'>Download Document</Typography>
+                            <Typography>Download and print your customized legal document</Typography>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             </React.Fragment>

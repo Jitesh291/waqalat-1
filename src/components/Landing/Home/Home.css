@@ -1,6 +1,9 @@
 .page-1{
     height: 100vh;
     display: block;
+    background-image: url('../../../assets/background.jpeg');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
 }
 .page-2{
     display: block;
@@ -139,6 +142,35 @@ li:focus-within {
     position: absolute; */
   }
 
+.step-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 40px;
+}
+
+.step{
+    width:20%;
+    
+}
+
+.step-number{
+    font-size: 3.75rem;
+    color: var(--lightGrey);
+}
+
+.step-heading{
+    color: var(--darkGrey);
+}
+.step-content{
+    margin-left:50px;
+    margin-top: -60px;
+}
+
+.how{
+    padding: 20px;
+    color: var(--darkGrey);
+}
 
 
 
