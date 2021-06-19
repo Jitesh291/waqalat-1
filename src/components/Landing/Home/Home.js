@@ -71,7 +71,9 @@ export default class Home extends Component {
                 </div>
                 
             </div>
-            <div className='page-2'><ServiceCards /></div>
+            <div className='page-2'>
+                <ServiceCards />
+            </div>
             
             </React.Fragment>
         )
