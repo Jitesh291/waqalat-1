@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Grid, Card, CardContent } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import { fetchDocuments } from '../../../actions/documents';
 import OutlineCard from './OutlineCard';
@@ -20,16 +20,13 @@ const useStyles = makeStyles({
 
 function Document(props) {
     const [documents, setDocuments] = useState([]);
-    const [id, setId] = useState(null);
     useEffect(() => {
         if (props.documents.status === 'INITIAL') props.fetchDocuments()
         if (props.documents.status === 'AVAILABLE') setDocuments(props.documents.documents.data)
-    })
+    },[props, props.documents])
     const getFields = useCallback((id) => {
-        console.log(id)
-        setId(id);
         props.history.push(`documents/${id}`);
-    }, [id])
+    }, [props.history])
     const classes = useStyles();
     return (
         <React.Fragment>

@@ -8,7 +8,6 @@ import { Button } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import { uploadRequest } from '../../../actions/upload';
 import { uploadPayload } from '../../../utils/upload';
-import { withRouter } from 'react-router-dom';
 import { getInitVals, createYupSchema } from '../../../utils/common';
 import Success from './Success';
 
