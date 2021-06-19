@@ -2,9 +2,8 @@ import React from "react";
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import { fade, withStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import { Typography, Link, AppBar, Toolbar, IconButton, InputBase, MenuItem, Menu } from "@material-ui/core";
+import { Typography, Link, AppBar, Toolbar, InputBase, MenuItem, Menu } from "@material-ui/core";
 import UserDropdown from './UserDropdown/UserDropdown';
 
 const styles = theme => ({
@@ -145,14 +144,14 @@ export class ToolbarComponent extends React.Component {
       <div className={classes.grow}>
         <AppBar position="static" color='transparent'>
           <Toolbar  className={classes.customiseToolbar}>
-            <IconButton
+            {/* <IconButton
               edge="start"
               className={classes.menuButton}
               aria-label="open drawer"
               onClick={this.props.openDrawerHandler}
             >
                 <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             <div className="logo">
                 <img className={classes.logo} src={'./Waqalat_Normal.png'} alt='company logo' onClick={()=>this.props.history.push('./')} style={{'cursor': 'pointer'}}/>
             </div>

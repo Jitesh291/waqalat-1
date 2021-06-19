@@ -1,6 +1,4 @@
 import ToolbarComponent from "./Toolbar/Toolbar";
-import HamburgerComponent from "./Hamburger/Hamburger";
-
 import React from 'react'
 
 export default class Header extends React.Component {
@@ -25,11 +23,11 @@ export default class Header extends React.Component {
   render() {
     return (
         <div className="Header">
-            <ToolbarComponent openDrawerHandler={this.openDrawer} />
-            <HamburgerComponent
+            <ToolbarComponent/>
+            {/* <HamburgerComponent
             left={this.state.left}
             toggleDrawerHandler={this.toggleDrawer}
-            />
+            /> */}
       </div>
     )
   }
