@@ -2,7 +2,7 @@ import { call, put } from "redux-saga/effects";
 import axios from "axios";
 
 import * as documentActions from "../actions/documents";
-import { SERVER_URL } from "../configuration/common";
+import { SERVER_URL, getAxiosInstance } from "../configuration/common";
 
 export function* documents_process() {
     try {
@@ -41,9 +41,8 @@ export function* documents_process() {
 }
 
 const getDocuments = () => {
-    let instance = axios.create({
-        headers: { "Content-Type": "application/json" }
-    });
+    const axiosInstance = getAxiosInstance();
     
-    return instance.get(`${SERVER_URL}/documents`);
+    
+    return axiosInstance.get(`${SERVER_URL}/documents`);
 };

@@ -1,16 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Home from './Home/Home';
 import SignIn from './SignIn/SignIn';
 import SignUp from './SignUp/SignUp';
+import NotSignedIn from './NotSignedIn/NotSignedIn';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Documents from './Documents/Documents';
 import UserForm from './UserForm/UserForm';
 import './Landing.css';
 
-export default class Landing extends React.Component {
+class Landing extends React.Component {
   render() {
+    const isSignedIn = this.props.signIn && this.props.signIn.isSignedIn ? true : false;
     return (
     <div>
          <BrowserRouter>
@@ -19,8 +22,15 @@ export default class Landing extends React.Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/signIn" component={SignIn} />
                 <Route exact path="/signUp" component={SignUp} />
-                <Route exact path="/documents" component={Documents} />
-                <Route path="/documents/:id" component={UserForm} />
+                {isSignedIn ?
+                <Switch>
+                  <Route exact path="/documents" component={Documents} />
+                  <Route path="/documents/:id" component={UserForm} />
+                </Switch>
+                :
+                <NotSignedIn />
+                // <Route exact path="/notSignedIn" component={NotSignedIn} /> 
+                }
                 {/* <Route path="/documents/:id" render={(props) => <UserForm {...props} />} /> */}
                 {/* <Route component={NotFound} /> */}
           </Switch>
@@ -30,3 +40,11 @@ export default class Landing extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+      signIn: state.signIn
+  }
+}
+
+export default connect(mapStateToProps)(Landing);

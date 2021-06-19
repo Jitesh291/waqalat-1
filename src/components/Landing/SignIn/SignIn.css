@@ -21,6 +21,8 @@
       margin: 50px 0px;
       margin-right:2%;
       float: left;
+      max-height: 70vh;
+      overflow-Y:scroll;
   }
   .colContainerIcon {
       background-color: #fff;
@@ -47,7 +49,6 @@
   input[type='mobile'],
   input[type='userName'],
   input[type='firstName'],
-  input[type='lastName'],
   input[type='lastName'],
   input[type='name'],
   input[type='age'],

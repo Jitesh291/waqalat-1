@@ -5,7 +5,7 @@ import { getSignUpPayload } from '../../../utils/signUp';
 import { connect } from 'react-redux';
 
 import React from 'react'
-import { Formik, Form } from 'formik'
+import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from '../../common/FormikControl'
 import { Button, Link, Typography } from '@material-ui/core';
@@ -18,8 +18,17 @@ function SignUp (props) {
     user_name:  'ishiroy',
     mobile:    '9790611464',
     email:     'iroy@gmail.com',
-    password:  'ishita1234567'
+    password:  'ishita1234567',
+    age:        '',
+    gender:     '',
+    tnc_accepted:        false
   }
+  const genderDropdownOptions = [
+    { key: 'Choose Gender', value: '' },
+    { key: 'Female', value: 'f' },
+    { key: 'Male', value: 'm' },
+    { key: 'Others', value: 'o' }
+  ]
 
   const validationSchema = Yup.object({
     first_name: Yup.string()
@@ -42,7 +51,13 @@ function SignUp (props) {
           .required('Required'),
     password: Yup.string()
             .required("Password is required")
-            .min(6, "Password is too short - should be 6 chars minimum")
+            .min(6, "Password is too short - should be 6 chars minimum"),
+    age: Yup.number()
+        .typeError('Invalid age format')
+        .required('Required')
+        .min(18, "You must be atleast 18 years old.")
+        .max(60, "Maximum age can be 60"),
+    gender: Yup.string().required('Required') 
   })
 
   const onSubmit = values => {
@@ -109,6 +124,28 @@ function SignUp (props) {
                 type='password'
                 label='Password'
                 name='password'
+                />
+                <FormikControl
+                control='input'
+                type='age'
+                label='Age'
+                name='age'
+                />
+                <FormikControl
+                control='select'
+                type='gender'
+                label='Gender'
+                name='gender'
+                options={genderDropdownOptions}
+                />
+                {/* <Field 
+                type='checkbox'
+                name='tnc'
+                /> */}
+                <FormikControl
+                control='simple-checkbox'
+                label='Terms & Conditions'
+                name='tnc_accepted'
                 />
                 <Button variant="contained" type='submit' disabled={!formik.isValid || isLoading}>{isLoading ? 'Loading...' : 'Submit'}</Button>
                 <div className='noAccount'>Already have an account yet? <Link style={{cursor: 'pointer'}} onClick={()=>props.history.push('./signIn')}>Click here to sign in.</Link></div>

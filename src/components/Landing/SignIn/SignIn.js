@@ -14,7 +14,12 @@ import { getSignInPayload } from '../../../utils/signIn';
 
 function SignIn (props) {
   useEffect(()=>{
-    if(props.signIn.status === 'AVAILABLE') props.history.push('/documents');
+    if(props.signIn.status === 'AVAILABLE') {
+      if(!localStorage.getItem('auth_token')){
+        localStorage.setItem('auth_token', props.signIn.token);
+      }
+      props.history.push('/documents');
+    }
   })
   const initialValues = {
     email: '',
