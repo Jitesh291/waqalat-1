@@ -8,7 +8,7 @@ import React from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from '../../common/FormikControl'
-import { Button, Link } from '@material-ui/core';
+import { Button, Link, Typography } from '@material-ui/core';
 import IconList from '../../IconList/IconList';
 
 function SignUp (props) {
@@ -54,6 +54,7 @@ function SignUp (props) {
   return (
     <React.Fragment>
     <div className='container'>
+      <div><Typography variant='h4'>Sign Up</Typography></div>
       <div className='colContainer'>
         <Formik
         initialValues={initialValues}

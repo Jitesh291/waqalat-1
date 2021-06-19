@@ -7,7 +7,7 @@ import React, {useEffect} from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from '../../common/FormikControl'
-import { Button, Link } from '@material-ui/core';
+import { Button, Link, Typography } from '@material-ui/core';
 import IconList from '../../IconList/IconList';
 import { getSignInPayload } from '../../../utils/signIn';
 //import { Link } from 'react-router-dom';
@@ -39,6 +39,7 @@ function SignIn (props) {
   return (
     <React.Fragment>
     <div className='container'>
+      <div><Typography variant='h4'>Sign In</Typography></div>
       <div className='colContainer'>
         <Formik
         initialValues={initialValues}
