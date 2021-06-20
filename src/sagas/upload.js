@@ -21,5 +21,5 @@ export function* upload_process(action) {
 
 const postuploadToAPI = data => {
     let instance = getAxiosInstance()
-    return instance.post(`${SERVER_URL}/build-document`, data);
+    return instance.post(`${SERVER_URL}/documents/build-document`, data);
 };
