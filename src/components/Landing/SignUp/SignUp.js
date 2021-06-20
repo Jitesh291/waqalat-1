@@ -5,7 +5,7 @@ import { getSignUpPayload } from '../../../utils/signUp';
 import { connect } from 'react-redux';
 
 import React from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from '../../common/FormikControl'
 import { Button, Link, Typography } from '@material-ui/core';

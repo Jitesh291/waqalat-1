@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, CircularProgress } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import { fetchDocuments } from '../../../actions/documents';
 import OutlineCard from './OutlineCard';
@@ -10,8 +10,7 @@ const useStyles = makeStyles({
     gridContainer: {
         margin: '10px',
         paddingLeft: "40px",
-        paddingRight: "40px",
-        height: '100%'
+        paddingRight: "40px"
     },
     docuContainer: {
         height: '100%'
@@ -28,9 +27,11 @@ function Document(props) {
         props.history.push(`documents/${id}`);
     }, [props.history])
     const classes = useStyles();
+    const isLoading = props.documents.status === 'INITIAL' ? true : false;
     return (
         <React.Fragment>
-
+{ !isLoading ?
+            <div style={{minHeight: '40vh'}}>
             <Grid
                 container
                 spacing={4}
@@ -46,8 +47,9 @@ function Document(props) {
 
                 }
 
-            </Grid>
-        </React.Fragment>
+            </Grid></div>
+: <div style={{padding:'40px'}}><CircularProgress /></div>
+}        </React.Fragment>
     );
 }
 

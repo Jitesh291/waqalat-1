@@ -1,5 +1,4 @@
 import { call, put } from "redux-saga/effects";
-import axios from "axios";
 
 import * as documentActions from "../actions/documents";
 import { SERVER_URL, getAxiosInstance } from "../configuration/common";
@@ -42,7 +41,5 @@ export function* documents_process() {
 
 const getDocuments = () => {
     const axiosInstance = getAxiosInstance();
-    
-    
     return axiosInstance.get(`${SERVER_URL}/documents`);
 };

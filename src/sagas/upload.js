@@ -1,8 +1,6 @@
 import { call, put } from "redux-saga/effects";
-import axios from "axios";
-
 import * as uploadActions from "../actions/upload";
-import { SERVER_URL } from "../configuration/common";
+import { SERVER_URL, getAxiosInstance } from "../configuration/common";
 
 export function* upload_process(action) {
     try {
@@ -22,8 +20,6 @@ export function* upload_process(action) {
 }
 
 const postuploadToAPI = data => {
-    let instance = axios.create({
-        headers: { "Content-Type": "application/json" }
-    });
+    let instance = getAxiosInstance()
     return instance.post(`${SERVER_URL}/build-document`, data);
 };

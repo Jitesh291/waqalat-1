@@ -1,8 +1,6 @@
 import { call, put } from "redux-saga/effects";
-import axios from "axios";
-
 import * as fieldActions from "../actions/fields";
-import { SERVER_URL } from "../configuration/common";
+import { SERVER_URL, getAxiosInstance } from "../configuration/common";
 
 export function* field_process(action) {
     try {
@@ -38,9 +36,6 @@ export function* field_process(action) {
 }
 
 const getfield = data => {
-    let instance = axios.create({
-        headers: { "Content-Type": "application/json" }
-    });
-    
+    let instance = getAxiosInstance();
     return instance.get(`${SERVER_URL}/documents/${data}`);
 };
