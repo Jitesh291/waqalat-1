@@ -1,7 +1,8 @@
 export const signIn = {
     REQUEST: 'SIGN_IN_REQUEST',
     SUCCESS: 'SIGN_IN_SUCCESS',
-    FAIL: 'SIGN_IN_FAIL'
+    FAIL: 'SIGN_IN_FAIL',
+    RESET: 'SIGN_IN_RESET'
 }
 
 export const signUp = {

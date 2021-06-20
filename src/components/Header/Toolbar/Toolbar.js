@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import { fade, withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
-import { Typography, Link, AppBar, Toolbar, InputBase, MenuItem, Menu } from "@material-ui/core";
+import { Typography, Link, AppBar, Toolbar, InputBase, MenuItem, Menu, Button } from "@material-ui/core";
 import UserDropdown from './UserDropdown/UserDropdown';
+import { resetSignIn } from "../../../actions/signIn";
 
 const styles = theme => ({
     logo: {
@@ -153,7 +154,7 @@ export class ToolbarComponent extends React.Component {
                 <MenuIcon />
             </IconButton> */}
             <div className="logo">
-                <img className={classes.logo} src={'./Waqalat_Normal.png'} alt='company logo' onClick={()=>this.props.history.push('./')} style={{'cursor': 'pointer'}}/>
+                <img className={classes.logo} src={'./Waqalat_Normal.png'} alt='company logo' onClick={()=>this.props.history.push('/')} style={{'cursor': 'pointer'}}/>
             </div>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -169,10 +170,13 @@ export class ToolbarComponent extends React.Component {
               />
             </div>
             <div className={classes.grow} />
+            {isLoggedIn ? 
+              <Button variant='contained' style={{margin: '0 360px 0 0'}}onClick={()=>this.props.history.push('/documents')}>View Documents</Button> : null
+            }
             {!isLoggedIn ? 
               <Typography><Link style={{cursor: 'pointer'}} color="inherit" onClick={()=>this.props.history.push('/signIn')}>Sign In</Link></Typography> 
               :
-              <UserDropdown user={this.props.signIn.user}/>
+              <UserDropdown user={this.props.signIn.user} {...this.props}/>
             }
           </Toolbar>
         </AppBar>
@@ -187,5 +191,10 @@ const mapStateToProps = state => {
       signIn: state.signIn
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+      resetSignIn: () => dispatch(resetSignIn())
+  }
+}
 
-export default withRouter(connect(mapStateToProps)(withStyles(styles)(ToolbarComponent)));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(ToolbarComponent)));
